@@ -1,18 +1,37 @@
 import React from 'react';
-import icon from '../images/placeholderIcon.png';
-import readyIcon from '../images/placeholderReadyIcon.png';
-import rewardIcon from '../images/placeholderRewardIcon.png';
+import defaultIcon from '../images/placeholderIcon.png';
+import defaultReadyIcon from '../images/placeholderReadyIcon.png';
+import defaultRewardIcon from '../images/placeholderRewardIcon.png';
 
-const icons = [
-    readyIcon, icon, icon, icon, icon, icon, rewardIcon
-];
+function IconGrid({ configData }) {
+  const { purchases, cafeConfig } = configData;
+  const { purchaseCount, currentPurchaseCount } = purchases;
+  const { icon, readyIcon, rewardIcon } = cafeConfig;
+  const totalIcons = purchaseCount + 1;
 
-function IconGrid() {
+  const getIconUrl = (serverUrl, defaultUrl) => {
+    return serverUrl && serverUrl.trim() !== "" ? serverUrl : defaultUrl;
+  };
+
+  const iconUrl = getIconUrl(icon, defaultIcon);
+  const readyIconUrl = getIconUrl(readyIcon, defaultReadyIcon);
+  const rewardIconUrl = getIconUrl(rewardIcon, defaultRewardIcon);
+
+  const renderIcon = (index) => {
+    if (index === totalIcons - 1) {
+      return <img src={rewardIconUrl} alt="Reward" className="icon-image" />;
+    } else if (index < currentPurchaseCount) {
+      return <img src={readyIconUrl} alt="Ready" className="icon-image" />;
+    } else {
+      return <img src={iconUrl} alt="Not Ready" className="icon-image" />;
+    }
+  };
+
   return (
     <div className="icon-grid">
-      {icons.map((icon, index) => (
+      {[...Array(totalIcons)].map((_, index) => (
         <div key={index} className="icon">
-          <img src={icon} alt={`Icon ${index + 1}`} />
+          {renderIcon(index)}
         </div>
       ))}
     </div>
