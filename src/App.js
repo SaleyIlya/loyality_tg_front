@@ -161,17 +161,20 @@ function App() {
   return (
     <div className="app">
       {cafeId ? (
-        <>
-          <img src={configData.cafeConfig.labelImage} alt="Cafe Label" className="label-image" />
-          <IconGrid configData={configData} />
-          <Button label="Generate QR" onClick={handleButtonClick} />
+        <div className="cafe-program">
+          <div className="cafe-content">
+            <img src={configData.cafeConfig.labelImage} alt="Cafe Label" className="cafe-label-image" />
+            <IconGrid configData={configData} />
+            <Button label="Generate QR" onClick={handleButtonClick} />
+          </div>
           {showQR && <QRPopup qrValue={qrValue} onClose={closeQRPopup} />}
-        </>
+        </div>
       ) : (
         <CafeList cafes={cafeList} />
       )}
     </div>
   );
 }
+
 
 export default App;

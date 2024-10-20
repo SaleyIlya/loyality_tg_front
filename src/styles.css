@@ -41,7 +41,7 @@ body {
   .cafe-list-container {
     width: 100%;
     max-width: 600px;
-    margin: 70px auto 0; /* Added top margin to account for fixed header */
+    margin: 70px auto 0;
     padding: 20px;
     box-sizing: border-box;
   }
@@ -96,7 +96,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 70px); /* Adjusted for fixed header */
+    height: calc(100vh - 70px);
     font-size: 18px;
     text-align: center;
     padding: 20px;
@@ -104,47 +104,78 @@ body {
     color: #FFA500;
   }
   
-  .label-image {
-    max-width: 100%;
+  .cafe-program {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #222222;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  .cafe-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cafe-label-image {
+    width: 200px;
     height: auto;
+    object-fit: contain;
     margin-bottom: 20px;
   }
   
   .icon-grid {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
     margin-bottom: 20px;
     justify-content: center;
+    width: 100%;
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 10px;
   }
   
   .icon {
-    width: 100px;
-    height: 100px;
+    aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
   }
   
   .icon-image {
-    width: 100%;
-    height: 100%;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
   }
   
+  .icon-image.ready {
+    filter: brightness(1.2);
+  }
+  
+  .icon-image.reward {
+    filter: brightness(1.5);
+  }
+  
   .action-button {
-    padding: 10px 20px;
-    border: 1px solid white;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    background-color: #FFA500;
+    color: #111111;
+    font-size: 18px;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 20px;
-    transition: background-color 0.2s ease-in-out;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
   }
   
   .action-button:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: #FFB52E;
   }
   
   /* Loader styles */
@@ -212,4 +243,18 @@ body {
       margin-right: 0;
       margin-bottom: 10px;
     }
+  
+    .cafe-program {
+      max-width: 90%;
+    }
+  
+    .cafe-label-image {
+      width: 150px;
+    }
+  
+    .icon-image {
+      width: 40px;
+      height: 40px;
+    }
   }
+  
