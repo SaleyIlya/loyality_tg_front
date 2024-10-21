@@ -1,5 +1,6 @@
 import React from 'react';
 import { QRCodeSVG } from 'qrcode.react';
+import '../styles/QRPopup.css';
 
 function QRPopup({ qrValue, onClose }) {
   return (

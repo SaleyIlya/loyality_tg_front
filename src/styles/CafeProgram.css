@@ -1,0 +1,33 @@
+.cafe-program {
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #222222;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  }
+  
+  .cafe-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cafe-label-image {
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    margin-bottom: 20px;
+  }
+  
+  @media (max-width: 600px) {
+    .cafe-program {
+      max-width: 90%;
+    }
+  
+    .cafe-label-image {
+      width: 150px;
+    }
+  }

@@ -4,6 +4,8 @@ import Button from './components/Button';
 import QRPopup from './components/QRPopup';
 import Loader from './components/Loader';
 import CafeList from './components/CafeList';
+import './styles/App.css';
+import './styles/CafeProgram.css';
 
 function App() {
   const [showQR, setShowQR] = useState(false);

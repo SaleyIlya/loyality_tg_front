@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/IconGrid.css';
 
 function IconGrid({ configData }) {
   const { purchases, cafeConfig } = configData;

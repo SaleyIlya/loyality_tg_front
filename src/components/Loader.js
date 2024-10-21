@@ -1,5 +1,6 @@
 import React from 'react';
-import loaderImage from '../images/loader.png'; // Make sure to add this PNG to your project
+import '../styles/Loader.css';
+import loaderImage from '../images/loader.png';
 
 function Loader() {
   return (

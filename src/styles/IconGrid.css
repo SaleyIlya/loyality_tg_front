@@ -1,0 +1,39 @@
+.icon-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: center;
+    width: 100%;
+    background-color: #333333;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .icon {
+    aspect-ratio: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .icon-image {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+  }
+  
+  .icon-image.ready {
+    filter: brightness(1.2);
+  }
+  
+  .icon-image.reward {
+    filter: brightness(1.5);
+  }
+  
+  @media (max-width: 600px) {
+    .icon-image {
+      width: 40px;
+      height: 40px;
+    }
+  }
